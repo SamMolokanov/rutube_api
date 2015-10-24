@@ -8,7 +8,10 @@ module RutubeApi
 
     def connection
       options = {
-        :headers => {'Accept' => "application/#{format}; charset=utf-8"},
+        :headers => {
+            'Accept' => "application/#{format}; charset=utf-8",
+            'User-Agent' => 'Rutube API gem, homepage: https://github.com/SamMolokanov/rutube_api'
+        },
         :url => endpoint,
       }
 
