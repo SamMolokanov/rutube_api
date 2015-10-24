@@ -43,7 +43,23 @@ All API calls return [Hashie::Mesh](https://github.com/intridea/hashie)
 
 **List of user's video**
 `RutubeApi.user_video(12111)` 
-makes request to [http://rutube.ru/api/video/person/12111](http://rutube.ru/api/video/person/12111)
+makes request to [http://rutube.ru/api/video/person/12111/](http://rutube.ru/api/video/person/12111/)
+
+**Info of a given user**
+`RutubeApi.user(12111)`
+makes request to [http://rutube.ru/api/profile/user/12111/](http://rutube.ru/api/profile/user/12111/)
+
+**All channels tags**
+`RutubeApi.tags`
+makes request to [http://rutube.ru/api/tags/](http://rutube.ru/api/tags/)
+
+**All videos by tag ID**
+`RutubeApi.tag_videos(1556)`
+makes request to [http://rutube.ru/api/tags/video/1556/](http://rutube.ru/api/tags/video/1556/)
+
+**All tv shows**
+`RutubeApi.tv_shows`
+makes request to [http://rutube.ru/api/metainfo/tv/](http://rutube.ru/api/metainfo/tv/)
 
 ## Development
 
