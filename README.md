@@ -1,7 +1,6 @@
 # RutubeApi
 
 Ruby wrapper for Rutube API [http://dev.rutube.ru/](http://dev.rutube.ru/)
-Written by analogy of `instagram-ruby-gem`
 
 ## Installation
 
@@ -24,6 +23,7 @@ Or install it yourself as:
 ### Simple Example
 
 ```ruby
+# default config
 RutubeApi.configure do |config|
   config.adapter = Faraday.default_adapter
   config.connection_options = {}
@@ -42,24 +42,28 @@ All API calls return [Hashie::Mesh](https://github.com/intridea/hashie)
 ####Video API [http://dev.rutube.ru/api_video](http://dev.rutube.ru/api_video)
 
 **List of user's video**
-`RutubeApi.user_video(12111)` 
-makes request to [http://rutube.ru/api/video/person/12111/](http://rutube.ru/api/video/person/12111/)
+  `RutubeApi.user_video(12111)`
+  makes request to [http://rutube.ru/api/video/person/12111/](http://rutube.ru/api/video/person/12111/)
 
 **Info of a given user**
-`RutubeApi.user(12111)`
-makes request to [http://rutube.ru/api/profile/user/12111/](http://rutube.ru/api/profile/user/12111/)
+  `RutubeApi.user(12111)`
+  makes request to [http://rutube.ru/api/profile/user/12111/](http://rutube.ru/api/profile/user/12111/)
 
 **All channels tags**
-`RutubeApi.tags`
-makes request to [http://rutube.ru/api/tags/](http://rutube.ru/api/tags/)
+  `RutubeApi.tags`
+  makes request to [http://rutube.ru/api/tags/](http://rutube.ru/api/tags/)
 
 **All videos by tag ID**
-`RutubeApi.tag_videos(1556)`
-makes request to [http://rutube.ru/api/tags/video/1556/](http://rutube.ru/api/tags/video/1556/)
+  `RutubeApi.tag_videos(1556)`
+  makes request to [http://rutube.ru/api/tags/video/1556/](http://rutube.ru/api/tags/video/1556/)
 
 **All tv shows**
-`RutubeApi.tv_shows`
-makes request to [http://rutube.ru/api/metainfo/tv/](http://rutube.ru/api/metainfo/tv/)
+  `RutubeApi.tv_shows`
+  makes request to [http://rutube.ru/api/metainfo/tv/](http://rutube.ru/api/metainfo/tv/)
+
+**All episodes of given show id**
+  `RutubeApi.show_episodes(28, season: 4)`
+  makes request to [http://rutube.ru/api/metainfo/tv/28/video/?season=4](http://rutube.ru/api/metainfo/tv/28/video/?season=4)
 
 ## Development
 

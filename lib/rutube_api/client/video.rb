@@ -77,6 +77,19 @@ module RutubeApi
         response.body
       end
 
+      # Returns all eposodes by given show id
+      #
+      # @overload show_episodes(_)
+      #   @return [Hashie::Mesh] All tv show episodes.
+      #   @example Return [Hashie::Mesh] with all tv show episodes
+      #     RutubeApi.show_episodes(28)
+      #
+      def show_episodes(*args)
+        options = args.last.is_a?(Hash) ? args.pop : {}
+        id = args.first
+        response = get("metainfo/tv/#{id}/video/", options)
+        response.body
+      end
     end
   end
 end
